@@ -6,6 +6,8 @@ Of all the colorschemes I've ever tried in the past 17 years, I always
 gravitate back to Ekvoli.  Nothing beats it for me in terms of comfort of
 reading, aesthetic beauty, and code clarity.
 
+![Example of ekvoli colorscheme in Vim](ekvoli-sample.png)
+
 ## Goals
 This project's goal is to take the beautiful Ekvoli colorscheme and adjust the
 overall HSV values of all of the colors to arrive at base color motifs of the

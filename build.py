@@ -64,8 +64,8 @@ def base16_colorways(hsv):
 def vim_colorways(hsv):
     return [
         sh(
-            "./src/hsv -i ./vim/colors/ekvoli.vim -o {target} -H {hue} -S {sat} -V {vol}",
-            target=f"./vim/colors/ekvoli-{scheme}.vim",
+            "./src/hsv -i ./colors/ekvoli.vim -o {target} -H {hue} -S {sat} -V {vol}",
+            target=f"./colors/ekvoli-{scheme}.vim",
             hue=hue,
             sat=sat,
             vol=vol,
