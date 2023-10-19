@@ -32,7 +32,7 @@ void adjust_colors(const std::string& prefix,
         for (auto iter = std::sregex_iterator(line.begin(), line.end(), pattern);
              iter != end;
              iter++) {
-            outfile << line.substr(0, iter->position());
+            outfile << line.substr(last_position, iter->position());
             std::string input_str = iter->str();
             input_str = input_str.substr(prefix.length());
             input_str = input_str.substr(0, input_str.length() - suffix.length());

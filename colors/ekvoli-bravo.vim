@@ -27,43 +27,43 @@ hi CursorLine     	guibg=#64046f gui=none
 hi CursorColumn   	guibg=#64046f gui=none
 
 
-hi Normal			guifg=#ffffffhi Normal			guifg=#ffffff guibg=#35002f
-hi Error			guibg=#a01000hi Error			guibg=#6000a0 gui=bold,italic,undercurl guisp=#ffffff
-hi ErrorMsg			guifg=#ffffffhi ErrorMsg			guifg=#ffffff guibg=#ff27e9 gui=bold,italic
-hi Visual			guibg=#b01fc0hi Visual			guibg=#2080c0 guifg=#ffffff gui=bold
-hi VisualNOS		guibg=#a060a0hi VisualNOS		guibg=#6080a0 guifg=#ffffff gui=bold
-hi Todo				guibg=#9700d0hi Todo				guibg=#00a0d0 guifg=#ffffff gui=underline
+hi Normal			guifg=#ffffff guibg=#001535#35002f
+hi Error			guibg=#a01000 gui=bold,italic,undercurl guisp=#ffffff#ffffff
+hi ErrorMsg			guifg=#ffffff guibg=#287eff gui=bold,italic#ff27e9 gui=bold,italic
+hi Visual			guibg=#b01fc0 guifg=#ffffff gui=bold#ffffff gui=bold
+hi VisualNOS		guibg=#a060a0 guifg=#ffffff gui=bold#ffffff gui=bold
+hi Todo				guibg=#9700d0 guifg=#ffffff gui=underline#ffffff gui=underline
 
 hi NonText			guifg=#f064d5
 
-hi Search 			guibg=#996690hi Search 			guibg=#667799 guifg=#ffffff gui=bold
-hi IncSearch 		guibg=#996690hi IncSearch 		guibg=#667799 guifg=#ffffff gui=bold
+hi Search 			guibg=#996690 guifg=#ffffff gui=bold#ffffff gui=bold
+hi IncSearch 		guibg=#996690 guifg=#ffffff gui=bold#ffffff gui=bold
 
 hi SpecialKey		guifg=#8f00e0
 hi Directory		guifg=#8f00e0
-hi Title			guifg=#d7ade6hi Title			guifg=#add8e6 guibg=#602040 gui=underline
+hi Title			guifg=#d7ade6 guibg=#202060 gui=underline#602040 gui=underline
 hi def link         mkdHeading       Title
 hi WarningMsg		guifg=#d7ade6
-hi WildMenu			guifg=#ffffffhi WildMenu			guifg=#ffffff guibg=#a000c0
-hi Pmenu			guifg=#ffffffhi Pmenu			guifg=#ffffff guibg=#880090
-hi PmenuSel			guifg=#ffffffhi PmenuSel			guifg=#ffffff guibg=#c02fb8
+hi WildMenu			guifg=#ffffff guibg=#0080c0#a000c0
+hi Pmenu			guifg=#ffffff guibg=#005090#880090
+hi PmenuSel			guifg=#ffffff guibg=#3070c0#c02fb8
 hi ModeMsg			guifg=#9821e2
 hi MoreMsg			guifg=#9821e2 gui=bold
 hi Question			guifg=#9821e2 gui=none
 
-hi MatchParen		guifg=#ffffffhi MatchParen		guifg=#ffffff guibg=#c02fb8 gui=bold
+hi MatchParen		guifg=#ffffff guibg=#3070c0 gui=bold#c02fb8 gui=bold
 
-hi StatusLine		guifg=#ffffffhi StatusLine		guifg=#ffffff guibg=#750f72 gui=bold
-hi StatusLineNC		guifg=#f064e5hi StatusLineNC		guifg=#65a0f0 guibg=#750f72 gui=none
-hi VertSplit		guifg=#852f82hi VertSplit		guifg=#305885 guibg=#852f82 gui=none
-hi Folded			guifg=#f364f6hi Folded			guifg=#65b0f6 guibg=#551146 gui=italic
-hi FoldColumn		guifg=#ffffffhi FoldColumn		guifg=#ffffff guibg=#660f5d gui=none
+hi StatusLine		guifg=#ffffff guibg=#104075 gui=bold#750f72 gui=bold
+hi StatusLineNC		guifg=#f064e5 guibg=#104075 gui=none#750f72 gui=none
+hi VertSplit		guifg=#852f82 guibg=#305885 gui=none#852f82 gui=none
+hi Folded			guifg=#f364f6 guibg=#122555 gui=italic#551146 gui=italic
+hi FoldColumn		guifg=#ffffff guibg=#103366 gui=none#660f5d gui=none
 hi LineNr			guifg=#b050b0 gui=bold
 
-hi DiffAdd			guibg=#801fa0hi DiffAdd			guibg=#2080a0 guifg=#ffffff gui=bold
-hi DiffChange		guibg=#801fa0hi DiffChange		guibg=#2080a0 guifg=#ffffff gui=bold
-hi DiffDelete		guibg=#782f80hi DiffDelete		guibg=#306080 guifg=#ffffff gui=none
-hi DiffText			guibg=#a07077hi DiffText			guibg=#8070a0 guifg=#ffffff gui=bold
+hi DiffAdd			guibg=#801fa0 guifg=#ffffff gui=bold#ffffff gui=bold
+hi DiffChange		guibg=#801fa0 guifg=#ffffff gui=bold#ffffff gui=bold
+hi DiffDelete		guibg=#782f80 guifg=#ffffff gui=none#ffffff gui=none
+hi DiffText			guibg=#a07077 guifg=#ffffff gui=bold#ffffff gui=bold
 
 hi SpellBad 		gui=undercurl,italic guisp=#df75ff
 hi SpellCap 		gui=undercurl guisp=#b27bba
@@ -84,8 +84,8 @@ hi Underlined		gui=underline cterm=underline term=underline
 
 " Tab colors
 hi TabLineFill      guifg=bg
-hi TabLineSel       guifg=#ffffffhi TabLineSel       guifg=#ffffff guibg=#ff3eee
-hi TabLine          guifg=#ffffffhi TabLine          guifg=#ffffff guibg=#35002f
+hi TabLineSel       guifg=#ffffff guibg=#3f8fff#ff3eee
+hi TabLine          guifg=#ffffff guibg=#001535#35002f
 
 " TVO - The Vim Outliner
 hi otlTab0    gui=bold,underline guifg=#ffeef6
@@ -98,6 +98,6 @@ hi otlTab7    gui=bold,underline guifg=#aa21e2
 hi otlTab6    gui=bold,underline guifg=#ee6688
 hi otlTab8    gui=bold,underline guifg=#ee10d4
 hi otlTab9    gui=bold,underline guifg=#d499ee
-hi otlTodo    gui=bold,underline guifg=#ffffffhi otlTodo    gui=bold,underline guifg=#ffffff guibg=#9700d0
-hi otlTagRef  guifg=#ffffffhi otlTagRef  guifg=#ffffff guibg=#a07077
-hi otlTagDef  guifg=#ffffffhi otlTagDef  guifg=#ffffff guibg=#880090
+hi otlTodo    gui=bold,underline guifg=#ffffff guibg=#00a0d0#9700d0
+hi otlTagRef  guifg=#ffffff guibg=#8070a0#a07077
+hi otlTagDef  guifg=#ffffff guibg=#005090#880090
