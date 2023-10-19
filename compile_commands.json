@@ -1,0 +1,7 @@
+[
+    {
+        "command": "c++ -c -Wall --std=c++2a -I./include -I./deps/moonlight/include -g -o src/hsv src/hsv.cpp",
+        "directory": "/home/lainproliant/proj/base16-ekvoli",
+        "file": "/home/lainproliant/proj/base16-ekvoli/src/hsv.cpp"
+    }
+]
