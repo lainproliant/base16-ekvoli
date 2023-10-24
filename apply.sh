@@ -6,6 +6,8 @@
 # Date: Tuesday October 24, 2023
 #
 
-~/.base16/apply.sh "ekvoli-$1"
+pushd ~/.base16
+./apply.sh "ekvoli-$1"
+popd
 cp ./colors/*.vim ~/.vim/user-plugs/ekvoli-ng/colors/
 sed -i "s/^colorscheme.*/colorscheme ekvoli-$1/" ~/.vim/highlight.vim
