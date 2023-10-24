@@ -47,9 +47,11 @@ hi WarningMsg       guifg=#add8e6
 hi WildMenu         guifg=#ffffff guibg=#0080c0
 hi Pmenu            guifg=#ffffff guibg=#005090
 hi PmenuSel         guifg=#ffffff guibg=#3070c0
-hi CocFloating      guibg=#ffffff guifg=#005090
-hi CocErrorFloat    guibg=#ffffff guifg=#6000a0
-hi CocMenueSel      guibg=#ffffff guifg=#3070c0
+hi CocFloating      guifg=#ffffff guibg=#304070
+hi CocErrorFloat    guifg=#ffffff guibg=#6000a0
+hi CocMenueSel      guifg=#ffffff guibg=#3070c0
+hi CocPumSearch     guifg=#00c0e0
+hi CocPumDetail     guifg=#7fe9ff
 hi ModeMsg          guifg=#22cce2
 hi MoreMsg          guifg=#22cce2 gui=bold
 hi Question         guifg=#22cce2 gui=none
