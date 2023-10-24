@@ -1,11 +1,11 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # --------------------------------------------------------------------
 # build.py
 #
 # Author: Lain Musgrove (lain.musgrove@hearst.com)
 # Date: Wednesday October 18, 2023
 # --------------------------------------------------------------------
-from xeno.build import build, task
+from xeno.build import build, task, recipe
 from xeno.recipes import checkout, sh
 from xeno.recipes.cxx import ENV, compile
 
@@ -27,57 +27,96 @@ DEPS = [
 
 ENV.update(
     append="CFLAGS,LDFLAGS",
+    CC="g++",
     CFLAGS=["-I./include", "-I./deps/moonlight/include"],
     LDFLAGS="-g",
 )
 
 
 # -------------------------------------------------------------------
-@task
+@task(keep=True)
 def deps():
     return [checkout(dep) for dep in DEPS]
 
 
 # -------------------------------------------------------------------
-@task(dep="deps")
+@task(dep="deps", keep=True)
 def hsv(deps):
     return [compile("src/hsv.cpp")]
 
 
 # -------------------------------------------------------------------
-@task(dep="hsv")
+@recipe(factory=True)
+def make_base16_scheme(hsv, scheme, hue, sat, vol):
+    return sh(
+        "./src/hsv -p '' -i ./ekvoli.yaml -o {target} -H {hue} -S {sat} -V {vol}",
+        target=f"./ekvoli-{scheme}.yaml",
+        hsv=hsv,
+        hue=hue,
+        sat=sat,
+        vol=vol,
+    )
+
+
+# -------------------------------------------------------------------
+@recipe(factory=True)
+def make_vim_scheme(hsv, scheme, hue, sat, vol):
+    return sh(
+        "./src/hsv -i ./colors/ekvoli.vim -o {target} -H {hue} -S {sat} -V {vol}",
+        target=f"./colors/ekvoli-{scheme}.vim",
+        hsv=hsv,
+        hue=hue,
+        sat=sat,
+        vol=vol,
+    )
+
+
+# -------------------------------------------------------------------
+@task
 def base16_colorways(hsv):
     return [
-        sh(
-            "./src/hsv -p '' -i ./ekvoli.yaml -o {target} -H {hue} -S {sat} -V {vol}",
-            target=f"./ekvoli-{scheme}.yaml",
-            hue=hue,
-            sat=sat,
-            vol=vol,
-        )
+        make_base16_scheme(hsv, scheme, hue, sat, vol)
         for [scheme, hue, sat, vol] in HSV_TRANSFORM_MATRIX
     ]
 
 
 # -------------------------------------------------------------------
-@task(dep="hsv")
+@task
 def vim_colorways(hsv):
     return [
-        sh(
-            "./src/hsv -i ./colors/ekvoli.vim -o {target} -H {hue} -S {sat} -V {vol}",
-            target=f"./colors/ekvoli-{scheme}.vim",
-            hue=hue,
-            sat=sat,
-            vol=vol,
-        )
+        make_vim_scheme(hsv, scheme, hue, sat, vol)
         for scheme, hue, sat, vol in HSV_TRANSFORM_MATRIX
     ]
+
+
+# -------------------------------------------------------------------
+@task
+def base16_colorwheel(hsv):
+    return [make_base16_scheme(hsv, f"hue-{n}", n, 0, 0) for n in range(0, 360)]
+
+
+# -------------------------------------------------------------------
+@task
+def vim_colorwheel(hsv):
+    return [make_vim_scheme(hsv, f"hue-{n}", n, 0, 0) for n in range(0, 360)]
 
 
 # -------------------------------------------------------------------
 @task(default=True)
 def colorways(vim_colorways, base16_colorways):
     return [vim_colorways, base16_colorways]
+
+
+# -------------------------------------------------------------------
+@task
+def colorwheel(vim_colorwheel, base16_colorwheel):
+    return [vim_colorwheel, base16_colorwheel]
+
+
+# -------------------------------------------------------------------
+@task
+def test():
+    return sh("which g++ && readlink `which g++` && which `readlink `which g++``")
 
 
 # -------------------------------------------------------------------
