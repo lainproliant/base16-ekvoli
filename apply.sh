@@ -8,4 +8,4 @@
 
 ~/.base16/apply.sh "ekvoli-$1"
 cp ./colors/*.vim ~/.vim/user-plugs/ekvoli-ng/colors/
-sed -i 's/^colorscheme.*/colorscheme ekvoli-$1/' ~/.vim/highlight.vim
+sed -i "s/^colorscheme.*/colorscheme ekvoli-$1/" ~/.vim/highlight.vim
