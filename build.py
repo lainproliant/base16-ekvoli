@@ -5,7 +5,7 @@
 # Author: Lain Musgrove (lain.musgrove@hearst.com)
 # Date: Wednesday October 18, 2023
 # --------------------------------------------------------------------
-from xeno.build import build, task, recipe
+from xeno.build import build, recipe, task
 from xeno.recipes import checkout, sh
 from xeno.recipes.cxx import ENV, compile
 
@@ -28,7 +28,7 @@ DEPS = [
 ENV.update(
     append="CFLAGS,LDFLAGS",
     CC="g++",
-    CFLAGS=["-I./include", "-I./deps/moonlight/include"],
+    CFLAGS=["-I./include", "-I./deps/moonlight/include", "-std=c++2a"],
     LDFLAGS="-g",
 )
 
